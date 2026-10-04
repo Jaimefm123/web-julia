@@ -236,19 +236,28 @@
         --silhouette: #625778;
       }
 
-      .silhouette {
+      .reason-digit {
         position: relative;
         z-index: 1;
-        width: 124px;
-        height: 154px;
-        margin: 0 0 13px;
-        color: var(--silhouette);
-        filter: drop-shadow(0 8px 7px rgb(73 56 55 / 12%));
-        transition: transform 180ms ease;
+        display: grid;
+        width: 132px;
+        height: 132px;
+        place-items: center;
+        margin-bottom: 14px;
+        border: 1px solid rgb(191 133 128 / 20%);
+        border-radius: 50%;
+        color: var(--rose-dark);
+        background: rgb(255 253 251 / 70%);
+        box-shadow: 0 8px 24px rgb(104 61 56 / 8%);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 5.3rem;
+        line-height: 1;
+        transition: transform 180ms ease, box-shadow 180ms ease;
       }
 
-      .reason-button:hover .silhouette {
+      .reason-button:hover .reason-digit {
         transform: translateY(-3px) scale(1.035);
+        box-shadow: 0 12px 28px rgb(104 61 56 / 12%);
       }
 
       .reason-number {
@@ -260,13 +269,6 @@
         font-weight: 750;
         letter-spacing: 0.16em;
         text-transform: uppercase;
-      }
-
-      .reason-prompt {
-        position: relative;
-        z-index: 1;
-        color: var(--muted);
-        font-size: 0.83rem;
       }
 
       .gallery-section {
@@ -289,7 +291,7 @@
         width: 100%;
         margin: 0 0 22px;
         overflow: hidden;
-        padding: 9px 9px 0;
+        padding: 9px;
         border: 1px solid rgb(191 133 128 / 15%);
         border-radius: 19px;
         background: var(--paper);
@@ -326,14 +328,6 @@
         border-radius: 12px;
         background: var(--blush);
         object-fit: cover;
-      }
-
-      .gallery-card figcaption {
-        padding: 13px 11px 15px;
-        color: var(--muted);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.03rem;
-        text-align: center;
       }
 
       .footer {
@@ -470,10 +464,11 @@
           min-height: 226px;
         }
 
-        .silhouette {
-          width: 104px;
-          height: 126px;
-          margin-bottom: 8px;
+        .reason-digit {
+          width: 108px;
+          height: 108px;
+          margin-bottom: 10px;
+          font-size: 4.5rem;
         }
 
         .gallery-grid {
@@ -500,67 +495,27 @@
       <header class="hero page-shell">
         <span class="hero-heart hero-heart-one" aria-hidden="true">♡</span>
         <div class="hero-content">
-          <p class="eyebrow">Para mi persona favorita</p>
-          <h1>Julia es la chica <span>más guapa</span> y más lista del mundo mundial</h1>
-          <p class="hero-note">Un rinconcito hecho especialmente para ti, con todo mi cariño.</p>
+          <h1>Julia es la chica <span>más guapa y más lista</span> del mundo mundial</h1>
         </div>
         <span class="hero-heart hero-heart-two" aria-hidden="true">♡</span>
       </header>
 
       <section class="reasons-section page-shell" aria-labelledby="reasons-title">
         <div class="section-heading">
-          <p class="eyebrow">Tres de infinitas</p>
-          <h2 id="reasons-title">Top razones por las que eres mi novia favorita</h2>
-          <p>Elige una silueta para descubrir una de ellas.</p>
+          <h2 id="reasons-title">Top razones por las que eres la mejor novia del mundo.</h2>
         </div>
 
         <div class="reason-grid">
-          <button class="reason-button reason-button-one" type="button" data-dialog="reason-one">
-            <svg class="silhouette" viewBox="0 0 140 170" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M70 8c-18 0-31 14-31 33 0 13 6 24 15 30-7 5-13 11-16 19L22 142c-3 8 3 17 12 17h72c9 0 15-9 12-17l-16-52c-3-8-9-14-16-19 9-6 15-17 15-30C101 22 88 8 70 8Z"
-              />
-              <path
-                fill="var(--card-glow)"
-                d="M52 70c5 4 11 6 18 6s13-2 18-6l-7 17H59l-7-17Zm-17 45 17-27h36l17 27-8 27H43l-8-27Z"
-              />
-              <path fill="var(--silhouette)" d="M65 88h10v38H65z" />
-            </svg>
-            <span class="reason-number">Razón 1</span>
-            <span class="reason-prompt">Pulsa para descubrirla</span>
+          <button class="reason-button reason-button-one" type="button" data-dialog="reason-one" aria-label="Abrir razón 1">
+            <span class="reason-digit" aria-hidden="true">1</span>
           </button>
 
-          <button class="reason-button reason-button-two" type="button" data-dialog="reason-two">
-            <svg class="silhouette" viewBox="0 0 140 170" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M70 8c-18 0-31 14-31 33 0 13 6 24 15 30-7 5-13 11-16 19L22 142c-3 8 3 17 12 17h72c9 0 15-9 12-17l-16-52c-3-8-9-14-16-19 9-6 15-17 15-30C101 22 88 8 70 8Z"
-              />
-              <path
-                fill="var(--card-glow)"
-                d="M52 70c5 4 11 6 18 6s13-2 18-6l-7 17H59l-7-17Zm-17 45 17-27h36l17 27-8 27H43l-8-27Z"
-              />
-              <path fill="var(--silhouette)" d="M65 88h10v38H65z" />
-            </svg>
-            <span class="reason-number">Razón 2</span>
-            <span class="reason-prompt">Pulsa para descubrirla</span>
+          <button class="reason-button reason-button-two" type="button" data-dialog="reason-two" aria-label="Abrir razón 2">
+            <span class="reason-digit" aria-hidden="true">2</span>
           </button>
 
-          <button class="reason-button reason-button-three" type="button" data-dialog="reason-three">
-            <svg class="silhouette" viewBox="0 0 140 170" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M70 8c-18 0-31 14-31 33 0 13 6 24 15 30-7 5-13 11-16 19L22 142c-3 8 3 17 12 17h72c9 0 15-9 12-17l-16-52c-3-8-9-14-16-19 9-6 15-17 15-30C101 22 88 8 70 8Z"
-              />
-              <path
-                fill="var(--card-glow)"
-                d="M52 70c5 4 11 6 18 6s13-2 18-6l-7 17H59l-7-17Zm-17 45 17-27h36l17 27-8 27H43l-8-27Z"
-              />
-              <path fill="var(--silhouette)" d="M65 88h10v38H65z" />
-            </svg>
-            <span class="reason-number">Razón 3</span>
-            <span class="reason-prompt">Pulsa para descubrirla</span>
+          <button class="reason-button reason-button-three" type="button" data-dialog="reason-three" aria-label="Abrir razón 3">
+            <span class="reason-digit" aria-hidden="true">3</span>
           </button>
         </div>
       </section>
@@ -569,26 +524,21 @@
         <div class="page-shell">
           <div class="section-heading">
             <p class="eyebrow">Tú y yo</p>
-            <h2 id="gallery-title">Pequeños trocitos de felicidad</h2>
-            <p>Mis recuerdos favoritos siempre tienen algo que ver contigo.</p>
+            <h2 id="gallery-title">Te quiero mucho mucho</h2>
           </div>
 
           <div class="gallery-grid">
             <figure class="gallery-card">
               <img src="assets/julia-recuerdo-1.jpg" alt="Julia y su pareja abrazados junto a una mesa de billar" loading="lazy">
-              <figcaption>Un abrazo que lo dice todo</figcaption>
             </figure>
             <figure class="gallery-card">
               <img src="assets/julia-recuerdo-2.jpg" alt="Julia y su pareja compartiendo un momento juntos al aire libre" loading="lazy">
-              <figcaption>Mi sitio favorito: a tu lado</figcaption>
             </figure>
             <figure class="gallery-card">
               <img src="assets/julia-recuerdo-3.jpg" alt="Selfi de Julia y su pareja durante una excursión al atardecer" loading="lazy">
-              <figcaption>Aventuras contigo</figcaption>
             </figure>
             <figure class="gallery-card">
               <img src="assets/julia-recuerdo-4.jpg" alt="Julia y su pareja posando juntos en una foto" loading="lazy">
-              <figcaption>Otro recuerdo para guardar cerquita</figcaption>
             </figure>
           </div>
         </div>
@@ -602,7 +552,7 @@
       <img class="dialog-image" src="assets/gatito-razon-1.jpg" alt="Un gatito pequeño sacando la lengua">
       <div class="dialog-copy">
         <span class="reason-number">Razón 1</span>
-        <h2 id="reason-one-title">eres una cosia</h2>
+        <h2 id="reason-one-title">Eres una cosita</h2>
       </div>
     </dialog>
 
@@ -611,7 +561,7 @@
       <img class="dialog-image" src="assets/nutria-razon-2.jpg" alt="Una nutria cuida a su cría mientras flotan juntas en el agua">
       <div class="dialog-copy">
         <span class="reason-number">Razón 2</span>
-        <h2 id="reason-two-title">Te preocupas por los demás y por el mundo… y yo soy tu mundo</h2>
+        <h2 id="reason-two-title">Te preocupas por los demás y por el mundo (yo soy tu mundo vale?)</h2>
       </div>
     </dialog>
 
@@ -620,7 +570,7 @@
       <img class="dialog-image" src="assets/stitch-angel-razon-3.jpeg" alt="Stitch y Angel abrazándose con cariño">
       <div class="dialog-copy">
         <span class="reason-number">Razón 3</span>
-        <h2 id="reason-three-title">Me das los mejores besitos del mundo</h2>
+        <h2 id="reason-three-title">Me das los mejores besitos</h2>
       </div>
     </dialog>
 
